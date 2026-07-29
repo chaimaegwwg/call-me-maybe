@@ -48,6 +48,12 @@ if __name__ == "__main__":
 
         all_prompt = []
         all_params = []
+
+
+        if [prompt for prompt in new_prompts if prompt == '']:
+            print("Error: prompts must not be empty.")
+            sys.exit(0)
+
         for index, p in enumerate(new_prompts):
 
             generate_fn = start.convet(p, functions_name, functions,
@@ -70,17 +76,20 @@ if __name__ == "__main__":
                     t_res = result_text + k
                     param_type = valid_prompt.check_parameter(t_func)
 
-                    if param_type == "string":
+                    if param_type in ("string", "boolean"):
 
                         rest = found_parameters.found_a_string_param(model,
                                                                     np, t_func.name,p,t_res, k) # noqa
                         result_text += f'{k}="{rest}", '
-                    else:
+                    elif param_type in ("interger","number", "float"):
 
                         rest = found_parameters.found_a_number(model, np,
                                                                p, t_func.name,
                                                                t_res)
                         result_text += f'{k}={rest},\n'
+                    else:
+                        print("Error: the type of parameters is not valid")
+                        sys.exit(0)
 
                     params[k] = rest.strip("\n")
             all_params.append(params)
