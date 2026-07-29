@@ -49,7 +49,6 @@ if __name__ == "__main__":
         all_prompt = []
         all_params = []
 
-
         if [prompt for prompt in new_prompts if prompt == '']:
             print("Error: prompts must not be empty.")
             sys.exit(0)
@@ -81,7 +80,7 @@ if __name__ == "__main__":
                         rest = found_parameters.found_a_string_param(model,
                                                                     np, t_func.name,p,t_res, k) # noqa
                         result_text += f'{k}="{rest}", '
-                    elif param_type in ("interger","number", "float"):
+                    elif param_type in ("interger", "number", "float"):
 
                         rest = found_parameters.found_a_number(model, np,
                                                                p, t_func.name,
