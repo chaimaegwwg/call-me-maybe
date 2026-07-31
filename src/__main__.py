@@ -1,15 +1,15 @@
 import argparse
 import sys
 import numpy as np
-from . import models
-from . import parser
-from . import start
+from src import models
+from src import parser
+from src import start
 from typing import Any
-from . import state_machine
-from . import read_vocab
-from . import write_output
-from . import valid_prompt
-from . import found_parameters
+from src import state_machine
+from src import read_vocab
+from src import write_output
+from src import valid_prompt
+from src import found_parameters
 from llm_sdk.llm_sdk import Small_LLM_Model
 
 

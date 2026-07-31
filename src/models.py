@@ -1,8 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class Function_calling_test(BaseModel):
     prompt: str
+    model_config = ConfigDict(
+        extra="forbid")
 
 
 class Parameter(BaseModel):
@@ -18,3 +20,6 @@ class Function_definition(BaseModel):
     description: str
     parameters: dict[str, Parameter]
     returns: Returns
+
+    model_config = ConfigDict(
+        extra="forbid")

@@ -14,7 +14,7 @@ def found_a_number(model: Any, np: types.ModuleType,
     result: list[str] = []
     digits = [model.encode(str(i)).squeeze().tolist() for i in range(10)]
     dot = model.encode('.').squeeze().tolist()
-    sign = model.encode('-').squeeze().tolist()
+    sign = model.encode(' -').squeeze().tolist()
     comma = model.encode(",").squeeze().tolist()
     allowed_ids = []
     for s in range(10):
