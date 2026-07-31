@@ -9,8 +9,10 @@ of the 42 curriculum by <spam style= "color:#FFC0CB">khnoman </spam></h4>
 <li><a href="#overview"> Overview </a></li>
 <li><a href="#Installation">Installation</a></li>
 <li><a href="#Project_Description"> Project Description </a></li>
-<li><a href="#Rules"> Rules </a></li>
 <li><a href="#algo"> Algorithm Explanation</a> </li>
+<li><a href="#design_decions"> design_decions</a></li>
+<li><a href="#performance_analysis"> Performance analysis</a></li>
+<li><a href="#Testing_Strategy"> Testing Strategy analysis</a></li>
 <li><a href="#Project_Structure"> Project Structure </a></li>
 <li><a href="#Resources"> Resources </a></li>
 <li><a href="#AI_Usage"> AI Usage </a></li>
@@ -45,10 +47,11 @@ Call Me Maybe is a Python-based function calling system that uses a Small Langua
 
 <h2 style="font-size: 27px;" id="algo">Algorithm Explanation </h2>
 <p> The project uses a constrained decoding approach to perform function calling with a Small Language Model (LLM). First, the model predicts the most suitable function for a user's natural language request from a predefined list of available functions. Once the function is identified, each parameter is extracted individually using dedicated prompts tailored to its expected type (e.g., number, integer, or string). The extracted values are then converted to the appropriate Python data types and combined into a structured JSON object. Finally, a state machine generates the output token by token, ensuring the JSON format is always syntactically correct.</p>
+
 <h2 style="font_size: 27px;" id="design_decions"> Design Decions </h2>
 <p>The implementation separates the task into two stages: function selection and parameter extraction. This modular design simplifies debugging and improves maintainability. Pydantic models are used to validate function definitions and parameter schemas, while a state machine is responsible for producing valid JSON output. Different prompt templates are used for numeric and string parameters to improve extraction accuracy, and an fn_unknown function is included to handle requests that do not match any available function.</p>
 
-<h2 style="font_size: 27px;" id="performance_analysis"> performance_analysis </h2>
+<h2 style="font_size: 27px;" id="performance_analysis"> Performance analysis </h2>
 <p>The system performs efficiently because it only requires one LLM call to identify the function and one additional call for each parameter. The constrained decoding strategy significantly improves reliability by limiting the model's output to the expected format. Accuracy is high for well-defined prompts, although ambiguous or poorly phrased requests may still lead to incorrect function selection or parameter extraction.</p>
 
 
@@ -83,7 +86,6 @@ call_me_maybe/
 |        ├── function_calling_tests.json
 |        └── functions_definition.json
 ├── llm_sdk/
-├── algo_class.py
 ├── src/
 |   ├── __init__.py
 |   ├── __main__.py
@@ -100,13 +102,13 @@ call_me_maybe/
 </pre>
 e.>
 
-<div////>
+<div>
     <h2  style="font-size: 27px;" id="Resources"> 📚 Resources </h2>
     <h4 style="font-size: 20px;"> Useful Links:</h4>
     <ul>
-    <li> <a href="https://www.pygame.org/docs/"> pygame </a> </li>
-    <li> <a href="https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/"> Dijkstra's Algorithm</a></li>
-   <li><a href="https://www.youtube.com/watch?v=rvxt42na8Ss"> Explanation and solution of a Dijkstra algorithm example </a> </li>
+    <li> <a href="https://www.ibm.com/think/topics/llm-parameters"> LLM parameters </a> </li>
+    <li> <a href="https://youtu.be/LPZh9BOjkQs?si=p4lbGsabc-iztOLe"> How the LLMs works?</a></li>
+   <li><a href="https://www.ibm.com/think/topics/large-language-models#692473873"> what is LLM </a> </li>
     </ul>
     
 
