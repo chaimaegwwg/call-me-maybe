@@ -15,7 +15,7 @@ of the 42 curriculum by <spam style= "color:#FFC0CB">khnoman </spam></h4>
 <li><a href="#Testing_Strategy"> Testing Strategy analysis</a></li>
 <li><a href="#Project_Structure"> Project Structure </a></li>
 <li><a href="#Resources"> Resources </a></li>
-<li><a href="#AI_Usage"> AI Usage </a></li>
+
 </ul>
 
 <h4 id="overview"> 🎯OVERVIEW</h4>
@@ -94,13 +94,14 @@ call_me_maybe/
 |   ├── parser.py
 |   ├── read_vocab.py
 |   ├── start.py
-|   ├── state_prompt.py
+|   ├── state_machine.py
+|   ├── valid_prompt.py
 |   └── write_output.py
 ├── Makefile
 ├── README.md
 └── pyproject.toml
 </pre>
-e.>
+
 
 <div>
     <h2  style="font-size: 27px;" id="Resources"> 📚 Resources </h2>
@@ -110,6 +111,5 @@ e.>
     <li> <a href="https://youtu.be/LPZh9BOjkQs?si=p4lbGsabc-iztOLe"> How the LLMs works?</a></li>
    <li><a href="https://www.ibm.com/think/topics/large-language-models#692473873"> what is LLM </a> </li>
     </ul>
-    
 
 </div>

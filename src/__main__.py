@@ -20,7 +20,7 @@ def parser_args() -> Any:
     parser.add_argument("--input",
                         default="data/input/function_calling_tests.json")
     parser.add_argument("--output",
-                        default="data/output/function_calls.json")
+                        default="data/output/function_calling_results.json")
     args = parser.parse_args()
     return args
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
                         rest = found_parameters.found_a_string_param(model,
                                                                     np, t_func.name,p,t_res, k) # noqa
                         result_text += f'{k}="{rest}", '
-                    elif param_type in ("interger", "number", "float"):
+                    elif param_type in ("integer", "number", "float"):
 
                         rest = found_parameters.found_a_number(model, np,
                                                                p, t_func.name,
