@@ -109,7 +109,8 @@ call_me_maybe/
     <ul>
     <li> <a href="https://www.ibm.com/think/topics/llm-parameters"> LLM parameters </a> </li>
     <li> <a href="https://youtu.be/LPZh9BOjkQs?si=p4lbGsabc-iztOLe"> How the LLMs works?</a></li>
-   <li><a href="https://www.ibm.com/think/topics/large-language-models#692473873"> what is LLM </a> </li>
-    </ul>
+    <li><a href="https://www.ibm.com/think/topics/large-language-models#692473873"> what is LLM </a> </li>
+    <li><a href="https://www.tldraw.com/f/rPMT9ogqydm4Uq8yu4KgQ?d=v2993.1936.3472.3487.page" > my nots</a></li>
+  </ul>
 
 </div>

@@ -1,5 +1,6 @@
 import argparse
 import sys
+import re
 import numpy as np
 from src import models
 from src import parser
@@ -48,11 +49,18 @@ if __name__ == "__main__":
 
         all_prompt = []
         all_params = []
-
+        INT_max = 2147483647
+        INT_min = -2147483648
         if [prompt for prompt in new_prompts if prompt == '']:
             print("Error: prompts must not be empty.")
             sys.exit(0)
 
+        for i in new_prompts:
+            numb = re.findall(r"-?\d+", i)
+            for k in numb:
+                if int(k) > INT_max or int(k) < INT_min:
+                    print(f"Error: the number {k}")
+                    sys.exit(0)
         for index, p in enumerate(new_prompts):
 
             generate_fn = start.convet(p, functions_name, functions,
